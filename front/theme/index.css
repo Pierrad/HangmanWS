@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+}
+
+.buttons > a {
+  margin: 0 5px;
+}
+
+a {
+  font-size: 20px;
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

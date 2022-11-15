@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  max-width: min-content;
+  margin-bottom: 5px;
+}
+
+input[type="submit"] {
+  font-size: 20px;
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 20px;
+} 
+
+h2 {
+  margin-bottom: 10px;
+}
+
+#step2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mot {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+#mot li {
+  margin: 0 5px;
+}
+

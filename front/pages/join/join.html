@@ -1,0 +1,40 @@
+<!-- Vasseur Pierre-Adrien -->
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Rejoindre une partie</title>
+  <link rel="stylesheet" href="../../theme/global.css" />
+  <link rel="stylesheet" href="./join.css" />
+</head>
+
+<body>
+  <h1>Jeu du pendu</h1>
+
+  <div id="step1">
+    <h2>Entrez l'identifiant de la partie et votre pseudo</h2>
+    <form>
+      <input type="text" name="gameId" id="gameId" placeholder="Identifiant de la partie" />
+      <input type="text" name="playerName" id="playerName" placeholder="Votre pseudo" />
+      <input id="submitStep1" type="submit" value="Envoyer" />
+    </form>
+  </div>
+
+  <div id="step2">
+    <h2 id="playerId">C'est au tour du joueur X</h2>
+    <h4 id="errorsAllowed">Attention, X erreurs restantes</h4>
+    <ul id="mot"></ul>
+
+    <form id="gameForm">
+      <input id='lettre' type="text" placeholder="Lettre ?" />
+      <br />
+      <input id="submitStep2" type="submit" value="Envoyer" />
+    </form>
+  </div>
+  <script src="../../helpers/utils.js"></script>
+  <script src="../../helpers/types.js"></script>
+  <script src="./join.js"></script>
+</body>
+
+</html>

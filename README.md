@@ -1,1 +1,2 @@
-# HangmanWS
+# Multiplayer Hangman Game with WebSockets
+
