@@ -23,7 +23,13 @@ h2 {
   margin-bottom: 10px;
 }
 
-#step2 {
+#waiting {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#play {
   display: none;
   flex-direction: column;
   align-items: center;

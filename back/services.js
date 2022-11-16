@@ -1,4 +1,3 @@
-
 function createGame(word, nbErrorsAllowed, nbPlayers) {
   const game = {
     id: Math.random().toString(36).substr(2, 9),
@@ -14,9 +13,10 @@ function createGame(word, nbErrorsAllowed, nbPlayers) {
   return game
 }
 
-function createPlayer(game, name) {
+function createPlayer(ws, game, name) {
   const player = {
     id: Math.random().toString(36).substr(2, 9),
+    ws,
     name,
     errors: game.nbErrorsAllowed,
   }

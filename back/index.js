@@ -1,6 +1,6 @@
 // Vasseur Pierre-Adrien
 const WebSocket = require("ws")
-const { handleNewGame, handleNewPlayer } = require("./controllers")
+const { handleNewGame, handleNewPlayer, checkIfGameIsReady } = require("./controllers")
 const { secureJSONParse, log } = require("./utils") 
 const { LOG_TYPE, FRONT_MESSAGE_TYPE } = require("./types")
 

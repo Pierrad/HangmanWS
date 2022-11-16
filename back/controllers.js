@@ -18,7 +18,7 @@ function handleNewPlayer(ws, games, data) {
     handleError(ws, "Game not found")
     return
   }
-  const player = createPlayer(game, data.playerName)
+  const player = createPlayer(ws, game, data.playerName)
   game.players.push(player)
   games.splice(games.indexOf(game), 1, game)
   ws.send(JSON.stringify({
@@ -36,12 +36,14 @@ function checkIfGameIsReady(ws, games, gameId) {
     return
   }
   if (game.players.length === game.nbPlayers) {
-    ws.send(JSON.stringify({
-      type: BACK_MESSAGE_TYPE.GAME_READY,
-      data: {
-        gameId,
-      },
-    }))
+    game.players.forEach((player) => {
+      player.ws.send(JSON.stringify({
+        type: BACK_MESSAGE_TYPE.GAME_READY,
+        data: {
+          gameId,
+        },
+      }))
+    })
   }
 }
 

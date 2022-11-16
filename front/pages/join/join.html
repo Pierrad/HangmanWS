@@ -12,16 +12,21 @@
 <body>
   <h1>Jeu du pendu</h1>
 
-  <div id="step1">
+  <div id="join">
     <h2>Entrez l'identifiant de la partie et votre pseudo</h2>
     <form>
       <input type="text" name="gameId" id="gameId" placeholder="Identifiant de la partie" />
       <input type="text" name="playerName" id="playerName" placeholder="Votre pseudo" />
-      <input id="submitStep1" type="submit" value="Envoyer" />
+      <input id="submitJoin" type="submit" value="Envoyer" />
     </form>
   </div>
 
-  <div id="step2">
+  <div id="waiting">
+    <h2>En attente d'autres joueurs...</h2>
+    <div id="loader"></div>
+  </div>
+
+  <div id="play">
     <h2 id="playerId">C'est au tour du joueur X</h2>
     <h4 id="errorsAllowed">Attention, X erreurs restantes</h4>
     <ul id="mot"></ul>
@@ -29,7 +34,7 @@
     <form id="gameForm">
       <input id='lettre' type="text" placeholder="Lettre ?" />
       <br />
-      <input id="submitStep2" type="submit" value="Envoyer" />
+      <input id="submitPlay" type="submit" value="Envoyer" />
     </form>
   </div>
   <script src="../../helpers/utils.js"></script>
