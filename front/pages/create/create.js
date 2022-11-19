@@ -1,4 +1,5 @@
-connection = new WebSocket("ws://localhost:8080", "http")
+const currentHost = window.location.host.split(":")[0]
+connection = new WebSocket(`ws://${currentHost}:8080`, "http")
 
 connection.onopen = () => {
   console.log("connected")
