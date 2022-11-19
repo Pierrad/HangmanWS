@@ -5,10 +5,10 @@ function createGame(word, nbErrorsAllowed, nbPlayers) {
     nbErrorsAllowed: parseInt(nbErrorsAllowed, 10),
     nbPlayers: parseInt(nbPlayers, 10),
     players: [],
-    currentPlayerRound: 0,
-    round: 0,
+    currentPlayerRound: -1,
+    round: -1,
     correctLetters: [],
-    correctLettersExpected: [],
+    correctLettersExpected: calculateCorrectLettersExpected(word),
   }
   return game
 }
@@ -19,11 +19,42 @@ function createPlayer(ws, game, name) {
     ws,
     name,
     errors: game.nbErrorsAllowed,
+    isAlive: true,
+    numberOfLettersFound: 0,
   }
   return player
+}
+
+function calculateCorrectLettersExpected(word) {
+  const correctLettersExpected = []
+  for (let i = 0; i < word.length; i++) {
+    const letter = word[i]
+    if (!correctLettersExpected.includes(letter)) {
+      correctLettersExpected.push(letter)
+    }
+  }
+  return correctLettersExpected
+}
+
+function getIndexOfLetterInWord(word, letter) {
+  const indexes = []
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      indexes.push(i)
+    }
+  }
+  return indexes
+}
+
+function addToCorrectLetters(correctLetters, letter) {
+  if (!correctLetters.includes(letter)) {
+    correctLetters.push(letter)
+  }
 }
 
 module.exports = {
   createGame,
   createPlayer,
+  getIndexOfLetterInWord,
+  addToCorrectLetters,
 }

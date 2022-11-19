@@ -1,20 +1,20 @@
 {
-  "name": "pendu_back",
+  "name": "pendu_front",
   "version": "1.0.0",
-  "description": "Pendu Back WebSocket",
+  "description": "Pendu Front WebSocket",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "serve": "serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "nodejs",
-    "websocket"
+    "Javascript",
+    "Websocket",
+    "Node"
   ],
   "author": "Vasseur Pierre-Adrien",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.20",
-    "ws": "^8.11.0"
+    "serve": "^14.1.2"
   }
 }
